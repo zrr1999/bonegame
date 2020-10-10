@@ -1,2 +1,2 @@
-from .game import Game, GoBang
-from .render import Renderer
+from .board import Board
+from .player import Player

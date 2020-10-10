@@ -12,15 +12,15 @@ import sys
 #     long_description = fh.read()
 
 setup(
-    name="bone-tools",
+    name="bone-games",
     version="0.1.0",
-    keywords=["Tools", "Xidian"],
-    description="西电相关小工具",
+    keywords=["GoBang", "Game"],
+    description="基于OpenCV的各种小游戏",
     # long_description=long_description,
     # long_description_content_type="text/markdown",
     license="GPL-3.0 Licence",
     # url="https://github.com/tczrr1999/PyTex",
-    # author="zrr",
+    author="zrr",
     author_email="2742392377@qq.com",
     packages=find_packages(),
     classifiers=[
@@ -30,7 +30,7 @@ setup(
     ],
     include_package_data=True,
     platforms="any",
-    install_requires=['numpy', 'selenium', 'wheel'],
+    install_requires=['numpy', 'opencv-python'],
     scripts=[]
 )
 

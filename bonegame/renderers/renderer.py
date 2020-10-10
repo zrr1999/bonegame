@@ -2,7 +2,7 @@
 # _*_ coding: utf-8 _*_
 # @Time : 2020/10/10 15:55
 # @Author : 詹荣瑞
-# @File : render.py
+# @File : renderer.py
 # @desc : 本代码未经授权禁止商用
 import cv2
 import numpy as np
@@ -24,8 +24,9 @@ class Renderer(object):
         cv2.waitKey()
 
 
-r = Renderer()
-a = np.zeros((5, 5, 3), np.uint8)
-a[:, :2] = (255, 0, 255)
-a[:, 2:3] = (255, 255, 0)
-r.show(a)
+if __name__ == '__main__':
+    r = Renderer()
+    a = np.zeros((5, 5, 3), np.uint8)
+    a[:, :2] = (255, 0, 255)
+    a[:, 2:3] = (255, 255, 0)
+    r.show(a)
