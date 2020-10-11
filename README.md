@@ -2,30 +2,22 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![Upload Python Package](https://github.com/zrr1999/PyTex/workflows/Upload%20Python%20Package/badge.svg)
 
-本代码库基于OpenCV实现了若干小游戏，主要目的是完成人工智能概论课程的大作业。
-
-## 背景
-
-...
-
-## 优势
-- LaTex
-    1. 本辅助库可以有效避免拼写错误，漏加空格等低级错误。
-    2. 本辅助库可以借助Python提供更多的功能。
-    3. 本辅助库在插入图片、生成表格等方面有巨大优势。
-- Word
-    1. 本辅助库可以更加自由地编写文档。
-    2. 本辅助库可以借助Python提供更多的功能。
+本代码库基于OpenCV实现了若干小游戏，方便完成大三课程的大作业。
 
 
 ## 安装[![Downloads](https://pepy.tech/badge/bone-games)](https://pepy.tech/project/bone-games)
 
 这个项目使用 [Python](https://www.python.org/downloads/) 开发，请确保你本地安装了它。
 
-建议使用pip安装本库。
+使用PyPI安装。
 
 ```sh
 $ pip install bone-games
+```
+
+本地安装。
+```sh
+$ pip install .
 ```
 
 ## 使用说明
@@ -91,7 +83,13 @@ formula, name = st.sym2tex((x**2+7)*5)
 doc.generate_pdf('resources/math', compiler='XeLatex', clean_tex=False, clean=False)
 ```
 
-## 特色功能
+## 开发功能
+
+- [ ] 五子棋
+- [ ] 多人五子棋
+- [ ] 中国象棋
+- [ ] 围棋
+
 ## 更新日志
 - (2020.10.10) v0.1.0 发布
     - 实现了五子棋并提供了接口允许开发者进行扩展。

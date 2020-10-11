@@ -13,6 +13,9 @@ class Game(object):
         self.board = board
         self.players = players
 
+        self.success = False
+        self.round = 0
+
     def __str__(self):
         out = str(self.board)
         for p in self.players:
@@ -27,16 +30,17 @@ class Game(object):
         :param pos: 下子位置
         :return:
         """
-        if isinstance(player, int):
-            player = self.players[player]
         current_piece = self.board.map[pos]
         if current_piece == 0:
+            self.success = True
             if isinstance(player, Player):
                 self.board.map[pos] = player.number
             else:
                 self.board.map[pos] = self.players[player].number
         else:
+            self.success = False
             print(f"位置{pos}已有子")
         return self
 
-
+    def render(self):
+        raise NotImplementedError

@@ -10,18 +10,21 @@ import numpy as np
 
 class Renderer(object):
 
-    def __init__(self, height=480, width=640):
+    def __init__(self, height=480, width=640, colors=((0, 0, 0), (255, 0, 0), (0, 255, 0))):
         self.h = height
         self.w = width
+        self.colors = colors
 
-    def __call__(self, mat):
-        self.show(mat)
+    def __call__(self, mat, winname):
+        self.show(mat, winname)
 
-    def show(self, mat):
+    def show(self, mat, winname="image"):
+        out = np.zeros_like(mat)
+        out[mat == 1] = 155
+        out[mat == 2] = 255
         h, w = mat.shape[:2]
-        mat = mat.repeat(self.h//h, 0).repeat(self.w//w, 1)
-        cv2.imshow("img", mat)
-        cv2.waitKey()
+        out = out.repeat(self.h // h, 0).repeat(self.w // w, 1)
+        cv2.imshow(winname, out.astype(np.uint8))
 
 
 if __name__ == '__main__':
