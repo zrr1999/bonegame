@@ -2,14 +2,14 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![Upload Python Package](https://github.com/zrr1999/PyTex/workflows/Upload%20Python%20Package/badge.svg)
 
-本代码库基于OpenCV实现了若干小游戏，方便完成大三课程的大作业。
+本代码库若干小游戏，并利用OpenCV实现渲染，方便完成大三课程的大作业。
 
 
 ## 安装[![Downloads](https://pepy.tech/badge/bone-games)](https://pepy.tech/project/bone-games)
 
 这个项目使用 [Python](https://www.python.org/downloads/) 开发，请确保你本地安装了它。
 
-使用PyPI安装。
+使用PyPI安装（还没传）。
 
 ```sh
 $ pip install bone-games
@@ -22,75 +22,55 @@ $ pip install .
 
 ## 使用说明
 
-使用时，您可以创建一个文档实例。
+使用时，您可以直接引入GoBang类并实例化。
 
 ```python
-from pytex import MathDocument
+from bonegame import GoBang
+game = GoBang()
 ```
 
-如果你使用了默认的标准页，可以通过命令添加队伍信息
+你可以调用game对象的所有方法，大部分方法支持函数式编程。
 
 ```python
-board = Board(7, 7)
-players = [Player(f"p{i}", i, f"p{i}") for i in range(1, 3)]
-
-game = Game(board, players)
+game.down(0, (1, 1))  # 下子
+game.render()  # 显示
 ```
 
-你可以将md文档转换为latex
+## 代码示例
+
+如下代码可以直接运行，点击屏幕轮流进行下棋。
 
 ```python
-from pytex.utils import md2tex, MarkDown
-latex_code1 = md2tex(path="examples/md/abstract.md")
-latex_code2 = md2tex(file=open("examples/md/abstract.md", 'r', encoding='UTF-8'))
-latex_code3 = MarkDown("md/abstract.md")
-```
+from bonegame import GoBang
+import cv2
 
-你可以在文档中添加标题、摘要、目录。
+HEIGHT, WIDTH = 640, 640
+SIZE = 7
+WIN_NAME = "GoBang"
 
-```python
-doc.add_title()
-keys = ["出租车资源配置", "供求匹配模型", "缓解程度判断模型", "分区域动态实时补贴方案"]
-doc.add_abstract(latex_code, keys)
-doc.add_toc()
-```
-
-你可以在文档中添加 使用固定格式编写的md文档 作为一个section。
-
-```python
-doc.add_section(path="examples/md/wtcs.md")
-```
-
-你可以在文档中添加指定标题和内容的 section。
-
-```python
-doc.add_section(title="符号说明", content="大家好啊")
-```
-
-你可以在文档中添加变量，将会自动添加到变量表中，同时还可以使用符号转化器将其转换为latex代码
-
-```python
-from pytex.utils import SymbolTransformer
-from pylatex import NoEscape
-x = doc.add_var("x", NoEscape("这是一个优秀的$x$"))
-st = SymbolTransformer()
-formula, name = st.sym2tex((x**2+7)*5)
-```
-
-最后，你可以生成tex文档，或者pdf文档
-
-```python
-doc.generate_pdf('resources/math', compiler='XeLatex', clean_tex=False, clean=False)
+game = GoBang(SIZE, HEIGHT, WIDTH)
+cv2.namedWindow(WIN_NAME, cv2.WINDOW_AUTOSIZE)
+cv2.setMouseCallback(WIN_NAME, game.mouse_event)  # 创建默认鼠标事件（轮流下子）
+while True:
+    game.render(WIN_NAME)
+    key = cv2.waitKey(1)
+    if key == ord('q'):
+        break
 ```
 
 ## 开发功能
 
-- [ ] 五子棋
-- [ ] 多人五子棋
+- [x] 五子棋
+- [x] 多人五子棋
+- [ ] 更好的多人五子棋接口
 - [ ] 中国象棋
 - [ ] 围棋
+- [ ] 决策树
 
 ## 更新日志
+
+- (2020.10.11) v0.1.1 发布
+    - 将鼠标事件移入GoBang类。
 - (2020.10.10) v0.1.0 发布
     - 实现了五子棋并提供了接口允许开发者进行扩展。
 

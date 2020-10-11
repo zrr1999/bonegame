@@ -71,6 +71,7 @@ class GoBang(Game):
 
     def render(self, window_name="image"):
         self.renderer(self.board.map, window_name)
+        return self
 
     def mouse_event(self, event, x, y, flags, param):
         if event == cv2.EVENT_LBUTTONDOWN:
