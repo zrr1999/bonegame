@@ -1,4 +1,4 @@
-# PyTex
+# BoneGame
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![Upload Python Package](https://github.com/zrr1999/PyTex/workflows/Upload%20Python%20Package/badge.svg)
 
@@ -66,12 +66,16 @@ while True:
 - [ ] 中国象棋
 - [ ] 围棋
 - [ ] 决策树
+- [ ] 添加详细注释（代码文档）
+- [ ] 整合贪吃蛇
+- [ ] 增加OpenGL等其他渲染方式
+- [ ] 使用Taichi或Torch加速计算部分
 
 ## 更新日志
 
-- (2020.10.11) v0.1.1 发布
+- (2020.10.11) v0.1.1 
     - 将鼠标事件移入GoBang类。
-- (2020.10.10) v0.1.0 发布
+- (2020.10.10) v0.1.0 
     - 实现了五子棋并提供了接口允许开发者进行扩展。
 
 ## 维护者
