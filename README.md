@@ -9,7 +9,7 @@
 
 这个项目使用 [Python](https://www.python.org/downloads/) 开发，请确保你本地安装了它。
 
-使用PyPI安装（还没传）。
+使用PyPI安装。
 
 ```sh
 $ pip install bone-games

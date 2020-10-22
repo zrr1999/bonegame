@@ -8,16 +8,16 @@
 from setuptools import setup, find_packages
 import sys
 
-# with open("README.md", "r", encoding='UTF-8') as fh:
-#     long_description = fh.read()
+with open("README.md", "r", encoding='UTF-8') as fh:
+    long_description = fh.read()
 
 setup(
     name="bone-games",
-    version="0.1.0",
+    version="0.1.1",
     keywords=["GoBang", "Game"],
     description="基于OpenCV的各种小游戏",
-    # long_description=long_description,
-    # long_description_content_type="text/markdown",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     license="GPL-3.0 Licence",
     # url="https://github.com/tczrr1999/PyTex",
     author="zrr",
@@ -30,7 +30,7 @@ setup(
     ],
     include_package_data=True,
     platforms="any",
-    install_requires=['numpy', 'opencv-python'],
+    install_requires=['numpy', 'opencv-python', 'taichi', 'moderngl'],
     scripts=[]
 )
 
