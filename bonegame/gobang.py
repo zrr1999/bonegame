@@ -6,9 +6,9 @@
 # @desc : 本代码未经授权禁止商用
 import numpy as np
 import cv2
+from bonerender import Renderer
 from .game import Game
 from .core import Player, Board
-from .renderers import Renderer
 
 
 class GoBang(Game):
