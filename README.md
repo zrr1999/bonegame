@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![Upload Python Package](https://github.com/zrr1999/PyTex/workflows/Upload%20Python%20Package/badge.svg)
 
-本代码库若干小游戏，并利用OpenCV实现渲染，方便完成大三课程的大作业。
+本代码库若干小游戏，并利用OpenGL实现渲染，方便完成大三课程的大作业。
 
 
 ## 安装[![Downloads](https://pepy.tech/badge/bone-games)](https://pepy.tech/project/bone-games)
@@ -74,7 +74,10 @@ while True:
 
 ## 更新日志
 
-- (2020.10.11) v0.1.1 
+- (2020.10.27) v0.1.2
+    - 鼠标事件、图形渲染等全部移植到OpenGL。
+    - 增加了一个调用dll的五子棋例子。
+- (2020.10.11) v0.1.1
     - 将鼠标事件移入GoBang类。
 - (2020.10.10) v0.1.0 
     - 实现了五子棋并提供了接口允许开发者进行扩展。
