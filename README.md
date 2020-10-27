@@ -2,7 +2,8 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![Upload Python Package](https://github.com/zrr1999/PyTex/workflows/Upload%20Python%20Package/badge.svg)
 
-本代码库若干小游戏，并利用OpenGL实现渲染，方便完成大三课程的大作业。
+本代码库提供了制作小游戏的基本工具，实现了若干小游戏，
+并利用OpenGL实现渲染。
 
 
 ## 安装[![Downloads](https://pepy.tech/badge/bone-games)](https://pepy.tech/project/bone-games)
